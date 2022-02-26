@@ -7,13 +7,43 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/btnGallery"
+        android:id="@+id/btnPick1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Open Gallery"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="32dp"
+        android:text="Pick One Image/Video"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnPick2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Pick Multi Images/Videos"
+        app:layout_constraintEnd_toEndOf="@+id/btnPick1"
+        app:layout_constraintStart_toStartOf="@+id/btnPick1"
+        app:layout_constraintTop_toBottomOf="@+id/btnPick1" />
+
+    <Button
+        android:id="@+id/btnPick3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Pick One Video"
+        app:layout_constraintEnd_toEndOf="@+id/btnPick2"
+        app:layout_constraintStart_toStartOf="@+id/btnPick2"
+        app:layout_constraintTop_toBottomOf="@+id/btnPick2" />
+
+    <Button
+        android:id="@+id/btnPick4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Pick Multi Video"
+        app:layout_constraintEnd_toEndOf="@+id/btnPick3"
+        app:layout_constraintStart_toStartOf="@+id/btnPick3"
+        app:layout_constraintTop_toBottomOf="@+id/btnPick3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

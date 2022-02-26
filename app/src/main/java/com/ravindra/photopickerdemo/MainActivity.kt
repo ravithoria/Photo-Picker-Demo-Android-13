@@ -26,32 +26,43 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val btnGallery = findViewById<Button>(R.id.btnGallery)
-        btnGallery.setOnClickListener {
+        val btnPick1 = findViewById<Button>(R.id.btnPick1)
+        val btnPick2 = findViewById<Button>(R.id.btnPick2)
+        val btnPick3 = findViewById<Button>(R.id.btnPick3)
+        val btnPick4 = findViewById<Button>(R.id.btnPick4)
+
+        btnPick1.setOnClickListener {
             // Launches photo picker in single-select mode.
             // This means that the user can select one photo or video.
             val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
             startActivityForResult(intent, PHOTO_PICKER_SINGLE_SELECT_REQUEST_CODE)
+        }
 
+        btnPick2.setOnClickListener {
             // Launches photo picker in multi-select mode.
             // This means that user can select multiple photos/videos, up to the limit
             // specified by the app in the extra (10 in this example).
-//            val maxNumPhotosAndVideos = 2
-//            val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
-//            intent.putExtra(MediaStore.EXTRA_PICK_IMAGES_MAX, maxNumPhotosAndVideos)
-//            startActivityForResult(intent, PHOTO_PICKER_MULTI_SELECT_REQUEST_CODE)
+            val maxNumPhotosAndVideos = 2
+            val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
+            intent.putExtra(MediaStore.EXTRA_PICK_IMAGES_MAX, maxNumPhotosAndVideos)
+            startActivityForResult(intent, PHOTO_PICKER_MULTI_SELECT_REQUEST_CODE)
+        }
 
+        btnPick3.setOnClickListener {
             // Launches photo picker for videos only in single select mode.
-//            val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
-//            intent.type = "video/*" //// images only - intent.type = "images/*"
-//            startActivityForResult(intent, PHOTO_PICKER_VIDEO_SINGLE_SELECT_REQUEST_CODE)
+            val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
+            intent.type = "video/*" // images only - intent.type = "images/*"
+            startActivityForResult(intent, PHOTO_PICKER_VIDEO_SINGLE_SELECT_REQUEST_CODE)
+        }
 
+
+        btnPick4.setOnClickListener {
             // Launches photo picker for videos only in multi-select mode.
-//            val maxNumPhotosAndVideos = 2
-//            val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
-//            intent.type = "video/*" //// images only - intent.type = "images/*"
-//            intent.putExtra(MediaStore.EXTRA_PICK_IMAGES_MAX, maxNumPhotosAndVideos)
-//            startActivityForResult(intent, PHOTO_PICKER_VIDEO_MULTI_SELECT_REQUEST_CODE)
+            val maxNumPhotosAndVideos = 2
+            val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
+            intent.type = "video/*" //// images only - intent.type = "images/*"
+            intent.putExtra(MediaStore.EXTRA_PICK_IMAGES_MAX, maxNumPhotosAndVideos)
+            startActivityForResult(intent, PHOTO_PICKER_VIDEO_MULTI_SELECT_REQUEST_CODE)
         }
     }
 
