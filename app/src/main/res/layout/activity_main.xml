@@ -46,4 +46,14 @@
         app:layout_constraintStart_toStartOf="@+id/btnPick3"
         app:layout_constraintTop_toBottomOf="@+id/btnPick3" />
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPick4"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

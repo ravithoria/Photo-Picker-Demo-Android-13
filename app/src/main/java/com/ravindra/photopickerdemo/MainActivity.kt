@@ -7,11 +7,14 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 
 
 // https://developer.android.com/about/versions/13/features/photopicker#kotlin
 class MainActivity : AppCompatActivity() {
+
+    lateinit var imageView: ImageView
 
     companion object {
         private const val  PHOTO_PICKER_SINGLE_SELECT_REQUEST_CODE = 0
@@ -30,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val btnPick2 = findViewById<Button>(R.id.btnPick2)
         val btnPick3 = findViewById<Button>(R.id.btnPick3)
         val btnPick4 = findViewById<Button>(R.id.btnPick4)
+        imageView = findViewById(R.id.imageView)
 
         btnPick1.setOnClickListener {
             // Launches photo picker in single-select mode.
@@ -80,6 +84,7 @@ class MainActivity : AppCompatActivity() {
                 // Do stuff with the photo/video URI.
                 Log.d(TAG, "currentUri: $currentUri")
                 //content://media/picker/0/com.android.providers.media.photopicker/media/22337
+                imageView.setImageURI(currentUri)
                 return
             }
             PHOTO_PICKER_MULTI_SELECT_REQUEST_CODE -> {
