@@ -46,6 +46,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
                 // Get photo picker response for single select.
                 val currentUri: Uri? = data?.data
                 // Do stuff with the photo/video URI.
+                imageView.setImageURI(currentUri)
                 return
             }
             PHOTO_PICKER_MULTI_SELECT_REQUEST_CODE -> {
